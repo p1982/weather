@@ -1,5 +1,5 @@
-import { styled } from '@mui/material/styles'
 import { Card, CardContent, List, Typography } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 export const StyledList = styled(List)(({ theme }) => ({
   width: '100%',

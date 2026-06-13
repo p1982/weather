@@ -2,9 +2,9 @@ import { notFound } from 'next/navigation'
 
 import Footer from '@/components/layout/Footer/Footer'
 import Header from '@/components/layout/Header/Header'
+import PageContainer from '@/components/layout/PageContainer/PageContainer'
 import { isLocale, locales } from '@/i18n/settings'
 import AppProviders from '@/providers/AppProviders'
-import PageContainer from '@/components/layout/PageContainer/PageContainer'
 
 interface LocaleLayoutProps {
   children: React.ReactNode

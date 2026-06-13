@@ -3,7 +3,14 @@ import { useTranslation } from 'react-i18next'
 
 import { getWeatherIconUrl } from '@/api/mappers/weather-mapper'
 
-import { StyledCard, StyledCardContent, StyledCardHeader, StyledCardText, StyledCardTitle, StyledWeatherIcon } from './styled'
+import {
+  StyledCard,
+  StyledCardContent,
+  StyledCardHeader,
+  StyledCardText,
+  StyledCardTitle,
+  StyledWeatherIcon,
+} from './styled'
 
 import type { ForecastData } from '@/types/weather-type'
 

@@ -8,17 +8,13 @@ export interface CitySearchFormData {
   city: string
 }
 
+export const createCitySearchSchema = (requiredMessage: string) =>
+  z.object({
+    city: z.string().trim().min(2, { message: requiredMessage }),
+  })
+
 export const useSchemaCitySearch = () => {
   const { t } = useTranslation()
 
-  return useMemo(
-    () =>
-      z.object({
-        city: z
-          .string()
-          .trim()
-          .min(2, { message: t('search.required') }),
-      }),
-    [t],
-  )
+  return useMemo(() => createCitySearchSchema(t('search.required')), [t])
 }

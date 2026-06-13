@@ -1,12 +1,9 @@
-import FavoriteList from '@/components/layout/FavoriteList/FavoriteList'
 import React from 'react'
 
+import FavoriteList from '@/components/layout/FavoriteList/FavoriteList'
+
 const FavoritePages = () => {
-  return (
-    <>
-        <FavoriteList />
-    </>
-  )
+  return <FavoriteList />
 }
 
 export default FavoritePages

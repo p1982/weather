@@ -8,12 +8,12 @@ import { useTranslation } from 'react-i18next'
 
 import FormInput from '@/components/ui/Input/Input'
 import { useSchemaCitySearch, type CitySearchFormData } from '@/schemas/schema-city-search'
+import { useCityStore } from '@/store'
 import useWeatherStore from '@/store/weather-store/weather-store'
 
 import { StyledBox, StyledDividerWrapper, StyledForm, StyledContainer } from './styled'
 
 import type { SubmitEvent } from 'react'
-import { useCityStore } from '@/store'
 
 const SearchForm = () => {
   const { t } = useTranslation()
@@ -29,15 +29,13 @@ const SearchForm = () => {
     resolver: zodResolver(schemaCitySearch),
   })
 
-  useEffect(() => {
-    const subscription = formProps.watch(() => {
-      if (useWeatherStore.getState().error) {
-        clearError()
-      }
-    })
+  const cityValue = formProps.watch('city')
 
-    return () => subscription.unsubscribe()
-  }, [formProps, clearError])
+  useEffect(() => {
+    if (cityValue && useWeatherStore.getState().error) {
+      clearError()
+    }
+  }, [cityValue, clearError])
 
   const onSubmit = async ({ city }: CitySearchFormData) => {
     const id = await fetchWeatherByCity(city)

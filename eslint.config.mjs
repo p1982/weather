@@ -55,6 +55,7 @@ export default tseslint.config(
       'react/self-closing-comp': 'error',
       'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
       'react/jsx-no-useless-fragment': ['error', { allowExpressions: false }],
+      'react-hooks/incompatible-library': 'off',
       'import/no-duplicates': 'error',
       'import/order': [
         'error',

@@ -10,55 +10,55 @@ import LoadingSpinner from '@/components/ui/LoadingSpinner/LoadingSpinner'
 import { useCityStore, useWeatherStore } from '@/store'
 
 const NearbyPage = () => {
-    const { t } = useTranslation()
-    const fetchWeatherByCity = useWeatherStore((state) => state.fetchWeatherByCity)
-    const setCity = useCityStore((state) => state.setCity)
+  const { t } = useTranslation()
+  const fetchWeatherByCity = useWeatherStore((state) => state.fetchWeatherByCity)
+  const setCity = useCityStore((state) => state.setCity)
 
-    const [isLocating, setIsLocating] = useState(true)
-    const [geoError, setGeoError] = useState<string | null>(null)
+  const [isLocating, setIsLocating] = useState(true)
+  const [geoError, setGeoError] = useState<string | null>(null)
 
-    useEffect(() => {
-        let active = true
+  useEffect(() => {
+    let active = true
 
-        const loadNearbyWeather = async () => {
-            try {
-                const location = await getLocationByIp()
-                const id = await fetchWeatherByCity(location)
+    const loadNearbyWeather = async () => {
+      try {
+        const location = await getLocationByIp()
+        const id = await fetchWeatherByCity(location)
 
-                if (active && id) {
-                    setCity(id)
-                }
-            } catch {
-                if (active) {
-                    setGeoError(t('states.error'))
-                }
-            } finally {
-                if (active) {
-                    setIsLocating(false)
-                }
-            }
+        if (active && id) {
+          setCity(id)
         }
-
-        void loadNearbyWeather()
-
-        return () => {
-            active = false
+      } catch {
+        if (active) {
+          setGeoError(t('states.error'))
         }
-    }, [fetchWeatherByCity, setCity, t])
+      } finally {
+        if (active) {
+          setIsLocating(false)
+        }
+      }
+    }
 
-    return (
-        <PageContainer>
-            {isLocating ? (
-                <LoadingSpinner />
-            ) : geoError ? (
-                <Typography variant="body1" align="center" color="text.secondary">
-                    {geoError}
-                </Typography>
-            ) : (
-                <WeatherCard />
-            )}
-        </PageContainer>
-    )
+    void loadNearbyWeather()
+
+    return () => {
+      active = false
+    }
+  }, [fetchWeatherByCity, setCity, t])
+
+  return (
+    <PageContainer>
+      {isLocating ? (
+        <LoadingSpinner />
+      ) : geoError ? (
+        <Typography variant="body1" align="center" color="text.secondary">
+          {geoError}
+        </Typography>
+      ) : (
+        <WeatherCard />
+      )}
+    </PageContainer>
+  )
 }
 
 export default NearbyPage

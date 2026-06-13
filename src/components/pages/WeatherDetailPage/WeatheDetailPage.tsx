@@ -1,6 +1,7 @@
-import WeatherDetails from '@/components/layout/WeatherDetails/WeatherDetails'
 import { redirect } from 'next/navigation'
 import React from 'react'
+
+import WeatherDetails from '@/components/layout/WeatherDetails/WeatherDetails'
 interface Props {
   params: Promise<{ locale: string }>
   searchParams: Promise<{ city?: string }>
@@ -13,9 +14,7 @@ const WeatheDetailPages = async ({ searchParams }: Props) => {
     redirect('/')
   }
 
-  return (
-    <WeatherDetails city={city} />
-  )
+  return <WeatherDetails city={city} />
 }
 
 export default WeatheDetailPages

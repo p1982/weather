@@ -1,5 +1,6 @@
-import WeatheDetailPage from '@/components/pages/WeatherDetailPage/WeatheDetailPage'
 import { Suspense } from 'react'
+
+import WeatheDetailPage from '@/components/pages/WeatherDetailPage/WeatheDetailPage'
 
 interface PageProps {
   params: Promise<{ locale: string }>

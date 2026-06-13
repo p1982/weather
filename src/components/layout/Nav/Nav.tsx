@@ -37,19 +37,19 @@ const Nav = () => {
 
   const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/'
   const activeHref =
-    navigationConfig.find((item) => item.href === pathWithoutLocale)?.href ?? navigationConfig[0].href
+    navigationConfig.find((item) => item.href === pathWithoutLocale)?.href ??
+    navigationConfig[0].href
 
   return (
     <StyledBottomNavigation showLabels value={activeHref}>
       {navigationConfig.map((item) => (
-        <StyledBottomNavigationAction
+        <Link
           key={item.href}
-          component={Link}
           href={`/${locale}${item.href === '/' ? '' : item.href}`}
-          value={item.href}
-          label={item.label}
-          icon={item.icon}
-        />
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <StyledBottomNavigationAction value={item.href} label={item.label} icon={item.icon} />
+        </Link>
       ))}
     </StyledBottomNavigation>
   )
