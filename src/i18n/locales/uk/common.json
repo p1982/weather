@@ -1,0 +1,48 @@
+{
+  "header": {
+    "title": "Weather App",
+    "description": "Актуальна погода для обраного міста"
+  },
+  "footer": {
+    "title": "Copyright",
+    "text": "Weather App"
+  },
+  "nav": {
+    "home": "Головна",
+    "favorites": "Обрані міста",
+    "nearby": "Поблизу"
+  },
+  "search": {
+    "placeholder": "Введіть назву міста",
+    "submit": "Знайти",
+    "label": "Місто",
+    "title": "Пошук по місту",
+    "required": "Місто є обов'язковим і повинно містити принаймні 2 символи"
+  },
+  "weather": {
+    "city": "Місто",
+    "temperature": "Температура",
+    "feelsLike": "Відчувається як",
+    "humidity": "Вологість",
+    "wind": "Вітер",
+    "condition": "Стан",
+    "description": "Опис",
+    "icon": "Іконка",
+    "details": "Детальніше"
+  },
+  "favorites": {
+    "title": "Обрані міста",
+    "add": "Додати в обрані",
+    "remove": "Видалити",
+    "empty": "Список обраних міст порожній"
+  },
+  "states": {
+    "loading": "Завантаження...",
+    "error": "Сталася помилка",
+    "empty": "Введіть місто, щоб побачити погоду"
+  },
+  "language": {
+    "uk": "Українська",
+    "en": "English"
+  }
+}

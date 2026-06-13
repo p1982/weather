@@ -1,0 +1,48 @@
+{
+  "header": {
+    "title": "Weather App",
+    "description": "Current weather for your selected city"
+  },
+  "footer": {
+    "title": "Copyright",
+    "text": "Weather App"
+  },
+  "nav": {
+    "home": "Home",
+    "favorites": "Favorites",
+    "nearby": "Nearby"
+  },
+  "search": {
+    "placeholder": "Enter city name",
+    "submit": "Search",
+    "label": "City",
+    "title": "Search for a city",
+    "required": "City is required and must be at least 2 characters long"
+  },
+  "weather": {
+    "city": "City",
+    "temperature": "Temperature",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "condition": "Condition",
+    "description": "Description",
+    "icon": "Icon",
+    "details": "Details"
+  },
+  "favorites": {
+    "title": "Favorite cities",
+    "add": "Add to favorites",
+    "remove": "Remove",
+    "empty": "No favorite cities yet"
+  },
+  "states": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "empty": "Enter a city to see the weather"
+  },
+  "language": {
+    "uk": "Українська",
+    "en": "English"
+  }
+}
