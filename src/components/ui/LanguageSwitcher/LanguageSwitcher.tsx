@@ -17,7 +17,7 @@ const LanguageSwitcher = () => {
   const params = useParams()
   const pathname = usePathname()
   const router = useRouter()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const currentLocale =
     typeof params.locale === 'string' && isLocale(params.locale) ? params.locale : 'uk'
@@ -26,6 +26,8 @@ const LanguageSwitcher = () => {
     if (!nextLocale || nextLocale === currentLocale) {
       return
     }
+
+    void i18n.changeLanguage(nextLocale)
 
     const segments = pathname.split('/')
     segments[1] = nextLocale
